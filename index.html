@@ -1,37 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SNOUTY | Welcome</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SNOUTY: Real-time cryptocurrency price tracker and Web3 news aggregator powered by CoinGecko and NewsAPI">
+  <meta name="keywords" content="cryptocurrency, Web3, crypto news, Bitcoin, Ethereum, tokens, blockchain, DeFi, NFT">
+  <meta name="robots" content="index, follow">
+  <meta name="hashtags" content="#Crypto #Web3 #Blockchain #Bitcoin #Ethereum #DeFi #NFT #CryptoNews #Token">
+  <title>SNOUTY | Crypto Tracker</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --background-light: #f8f9fa;
+      --background-dark: #212529;
+    }
+
     body {
-      background: #f0f4f8;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--background-light);
+      line-height: 1.6;
     }
-    h1 {
-      color: #2c3e50;
-      font-size: 48px;
+
+    header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    p {
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .crypto-card .card {
+      background: #ffffff;
+    }
+
+    .news-card .card {
+      background: #ffffff;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 1rem;
       color: #555;
-      font-size: 18px;
     }
-    .box {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: inline-block;
+
+    .social-links a {
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 8px;
+      padding: 10px 20px;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    footer {
+      background: var(--background-dark);
+    }
+
+    @media (max-width: 576px) {
+      .display-3 {
+        font-size: 2.5rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+
+      .card-title {
+        font-size: 1.1rem;
+      }
+
+      .card-text {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Welcome to SNOUTY</h1>
-    <p>Your project is now live on GitHub Pages!</p>
-  </div>
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <img src="assets/logo.png" alt="SNOUTY Logo" class="img-fluid mb-3" style="max-width: 150px;">
+      <h1 class="display-3 fw-bold">SNOUTY</h1>
+      <p class="lead">Your Gateway to Crypto Prices & Web3 News</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <section id="crypto-section" class="mb-5">
+      <h2 class="text-center mb-4 fw-bold">Live Cryptocurrency Prices</h2>
+      <div id="crypto-container" class="row"></div>
+    </section>
+
+    <section id="news-section" class="mb-5">
+      <h2 class="text-center mb-4 fw-bold">Latest Crypto & Web3 News</h2>
+      <div id="news-container" class="row"></div>
+    </section>
+
+    <section id="collaboration" class="text-center bg-light py-5 rounded">
+      <h3 class="mb-3 fw-bold">Join the SNOUTY Community</h3>
+      <p class="lead mb-4">Participate in orders and explore guaranteed income opportunities through our Telegram channel!</p>
+      <a href="https://t.me/snoutydog" class="btn btn-primary btn-lg">Join Now on Telegram</a>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="social-links mb-3">
+        <a href="https://t.me/snoutydog" target="_blank" aria-label="Telegram" class="text-white mx-2"><i class="bi bi-telegram fs-4"></i></a>
+        <a href="https://instagram.com/snoutydog" target="_blank" aria-label="Instagram" class="text-white mx-2"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="https://twitter.com/snoutydog" target="_blank" aria-label="Twitter" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="https://tiktok.com/@snoutydog" target="_blank" aria-label="TikTok" class="text-white mx-2"><i class="bi bi-tiktok fs-4"></i></a>
+      </div>
+      <p class="mb-2">Open for collaboration in the crypto world. Contact us via <a href="https://t.me/snoutydog" class="text-white text-decoration-underline">Telegram</a>.</p>
+      <p class="mb-0">© 2025 SNOUTY. Licensed under MIT.</p>
+    </div>
+  </footer>
+
+  <script>
+    const CRYPTO_IDS = [
+      'bitcoin',
+      'ethereum',
+      'tether',
+      'binancecoin',
+      'solana',
+      'ripple',
+      'cardano'
+    ];
+
+    async function fetchCryptoData() {
+      try {
+        const response = await fetch(
+          `https://api.coingecko.com/api/v3/simple/price?ids=${CRYPTO_IDS.join(',')}&vs_currencies=usd`
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        const container = document.getElementById('crypto-container');
+        container.innerHTML = '';
+
+        CRYPTO_IDS.forEach(crypto => {
+          const price = data[crypto]?.usd ? `$${data[crypto].usd.toLocaleString('en-US', { minimumFractionDigits: 2 })}` : 'N/A';
+          const card = document.createElement('div');
+          card.className = 'col-md-4 col-lg-3 mb-4 crypto-card';
+          card.innerHTML = `
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title text-capitalize mb-3">${crypto}</h5>
+                <p class="card-text fs-5">${price}</p>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Error fetching crypto data:', error);
+        const container = document.getElementById('crypto-container');
+        container.innerHTML = `
+          <div class="col-12">
+            <div class="alert alert-danger text-center" role="alert">
+              Failed to load crypto prices. Please try again later.
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    async function fetchCryptoNews() {
+      try {
+        const response = await fetch(
+          'https://newsapi.org/v2/everything?q=cryptocurrency+OR+web3+OR+blockchain&language=en&sortBy=publishedAt&apiKey=1f6ae9c25e6b465f9a3f2f77e3517e0f'
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        const container = document.getElementById('news-container');
+        container.innerHTML = '';
+
+        data.articles.slice(0, 9).forEach(article => {
+          const description = article.description || 'No description available';
+          const card = document.createElement('div');
+          card.className = 'col-md-6 col-lg-4 mb-4 news-card';
+          card.innerHTML = `
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title mb-3">${article.title}</h6>
+                <p class="card-text">${description.substring(0, 100)}...</p>
+                <a href="${article.url}" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        const container = document.getElementById('news-container');
+        container.innerHTML = `
+          <div class="col-12">
+            <div class="alert alert-danger text-center" role="alert">
+              Failed to load news. Please try again later.
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchCryptoData();
+      fetchCryptoNews();
+      setInterval(fetchCryptoData, 60000);
+      setInterval(fetchCryptoNews, 3600000);
+    });
+  </script>
 </body>
 </html>
